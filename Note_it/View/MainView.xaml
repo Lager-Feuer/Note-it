@@ -23,11 +23,11 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="0">
-            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding NewNotebookCommand}" Cursor="Hand">
-                <Image Source="\res\icons\bw_icon_w.png" Width="25" Height="25" Margin="0" Grid.Row="0" Grid.Column="0" />
+            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding NewNotebookCommand}" Cursor="Hand" ToolTip="Notzbuch hinzufügen">
+                <Image Source="\res\icons\bw_icon_w.png" Width="25" Height="25" Margin="0"/>
             </Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxHeight="30" Orientation="Horizontal" Grid.Column="1">
             <Label Content="Suche: "/>
             <TextBox Width="300" Margin="3" TextChanged="TextBox_TextChanged"/>
         </StackPanel>
