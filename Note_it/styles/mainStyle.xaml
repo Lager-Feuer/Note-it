@@ -20,7 +20,7 @@
                                 <Setter Property="BorderBrush" Value="#00AFD3" />
                                 <Setter Property="BorderThickness" Value="1.5" />
                                 <Setter Property="CornerRadius" Value="6" />
-                                <Setter Property="Padding" Value="10,4" />
+                                <Setter Property="Padding" Value="2.5,2.5" />
 
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
