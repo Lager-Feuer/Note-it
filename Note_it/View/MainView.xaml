@@ -23,13 +23,23 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="0">
-            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding NewNotebookCommand}" Cursor="Hand" ToolTip="Notzbuch hinzufügen">
-                <Image Source="\res\icons\bw_icon_w.png" Width="25" Height="25" Margin="0"/>
+            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding NewNotebookCommand}" Cursor="Hand" ToolTip="Notizbuch hinzufügen">
+                <Image Source="\res\icons\icon_addNotebook.png" Width="25" Height="25" Margin="0"/>
+            </Button>
+            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding DeleteSelectedNotebookCommand}" Cursor="Hand" ToolTip="Ausgewähltes Notizbuch löschen">
+                <Image Source="\res\icons\icon_deleteNotebook.png" Width="25" Height="25" Margin="0"/>
+            </Button>
+            
+            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding NewNoteCommand}" Cursor="Hand" ToolTip="Notiz hinzufügen">
+                <Image Source="\res\icons\icon_addNote.png" Width="25" Height="25" Margin="0"/>
+            </Button>
+            <Button Style="{StaticResource mainButtons}" FontSize="10" Margin="5" Command="{Binding DeleteSelectedNoteCommand}" Cursor="Hand" ToolTip="Ausgewählte Notiz löschen">
+                <Image Source="\res\icons\icon_deleteNote.png" Width="25" Height="25" Margin="0"/>
             </Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxHeight="30" Orientation="Horizontal" Grid.Column="1">
             <Label Content="Suche: "/>
-            <TextBox Width="300" Margin="3" TextChanged="TextBox_TextChanged"/>
+            <TextBox Width="300" Margin="3" KeyDown="TextBox_KeyDown"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
             <ListView x:Name="NotebookView" ItemsSource="{Binding NotebookView}" SelectionChanged="NotebookView_SelectionChanged" MinHeight="30">
@@ -62,7 +72,7 @@
             <ItemsControl Grid.Column="1" x:Name="DynamicContent" ItemsSource="{Binding DynamicContentView}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBox MinHeight="368"
+                        <TextBox MinHeight="368" x:Name="NotesTextBox"
                                  AcceptsReturn="True" AcceptsTab="True"
                                  TextWrapping="Wrap"
                                  BorderThickness="0" 

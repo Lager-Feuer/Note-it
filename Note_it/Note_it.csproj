@@ -18,6 +18,10 @@
     <None Remove="res\icons\bw_icon_b.ico" />
     <None Remove="res\icons\bw_icon_b.png" />
     <None Remove="res\icons\bw_icon_w.png" />
+    <None Remove="res\icons\icon_addNote.png" />
+    <None Remove="res\icons\icon_addNotebook.png" />
+    <None Remove="res\icons\icon_deleteNote.png" />
+    <None Remove="res\icons\icon_deleteNotebook.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +34,10 @@
     <Resource Include="res\icons\bw_icon_b.ico" />
     <Resource Include="res\icons\bw_icon_b.png" />
     <Resource Include="res\icons\bw_icon_w.png" />
+    <Resource Include="res\icons\icon_addNote.png" />
+    <Resource Include="res\icons\icon_addNotebook.png" />
+    <Resource Include="res\icons\icon_deleteNote.png" />
+    <Resource Include="res\icons\icon_deleteNotebook.png" />
   </ItemGroup>
 
 </Project>

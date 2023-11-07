@@ -55,15 +55,20 @@ namespace Note_it.View
             ((MainViewModel)DataContext).NotebookViewSelectionChanged((Model.Notebook)notebookView.SelectedItem);
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            Model.Note noteItem = ((MainViewModel)DataContext).DynamicNotesCollection[0] as Model.Note;
-            TextBox searchField = sender as TextBox;
-            if (noteItem.Content.Contains(searchField.Text))
+            if (e.Key == System.Windows.Input.Key.Enter)
             {
+                Model.Note noteItem = ((MainViewModel)DataContext).DynamicNotesCollection[0] as Model.Note;
+                TextBox searchField = sender as TextBox;
+                if (!noteItem.Content.Contains(searchField.Text)) return;
 
+                ContentPresenter c = (ContentPresenter)DynamicContent.ItemContainerGenerator.ContainerFromIndex(0);
+                TextBox notesTextBox = c.ContentTemplate.FindName("NotesTextBox", c) as TextBox;
+                notesTextBox.Focus();
+                notesTextBox.Select(noteItem.Content.IndexOf(searchField.Text), searchField.Text.Length);
             }
-            ((MainViewModel)DataContext).TextBoxTextChanged(searchField.Text);
+            //((MainViewModel)DataContext).TextBoxTextChanged(searchField.Text);
         }
     }
 }

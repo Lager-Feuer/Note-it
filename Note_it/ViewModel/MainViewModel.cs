@@ -131,16 +131,5 @@ namespace Note_it.ViewModel
             if (notebookItem != null)
                 notesView.ItemsSource = notebookItem.Notizen;
         }
-
-        public void TextBoxTextChanged(String searchText)
-        {
-            try
-            {
-                Note noteItem = DynamicNotesCollection[0] as Note;
-                if (noteItem.Content.Contains(searchText))
-                    MessageBox.Show("Notiz beinhaltet den Text");
-            }
-            catch { }
-        }
     }
 }
